@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Crosscraft
+        psr4_prefix: Crosscraft
         src_path: app

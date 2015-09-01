@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Crosscraft\Events;
 
 abstract class Event
 {

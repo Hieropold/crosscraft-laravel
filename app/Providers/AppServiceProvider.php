@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Crosscraft\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

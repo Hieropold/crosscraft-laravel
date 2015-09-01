@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Crosscraft\Http\Controllers\Auth;
 
-use App\User;
+use Crosscraft\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Crosscraft\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
