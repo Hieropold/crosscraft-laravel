@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Crosscraft</div>
+                <div><a href="<?php print url('battle'); ?>">Битва</a></div>
             </div>
         </div>
     </body>
