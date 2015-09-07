@@ -1,3 +1,7 @@
+@extends('layouts.master')
+
+@section('title', '')
+
 <!DOCTYPE html>
 <html>
     <head>
