@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/battle', 'BattleController@battle');
+
+Route::get('/battle/guess/{wid}/{cid}', 'BattleController@guess');
