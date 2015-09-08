@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Битва')
+@section('title', 'Викторина')
 
 @section('content')
-    <h1>Битва</h1>
+    <h1>Викторина</h1>
 
     <h2><?php print $word; ?></h2>
 
