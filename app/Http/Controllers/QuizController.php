@@ -3,8 +3,8 @@ namespace Crosscraft\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 
-class BattleController extends Controller {
-    public function battle() {
+class QuizController extends Controller {
+    public function quiz() {
         // Select random word
         $random_offset = (int) DB::select('SELECT FLOOR(RAND() * COUNT(*)) AS offset FROM words')[0]->offset;
         $random_word = DB::select('SELECT * FROM words LIMIT ' . $random_offset . ', 1')[0];
@@ -32,14 +32,14 @@ class BattleController extends Controller {
             $shuffled_random_clues[$cid] = $random_clues[$cid];
         }
 
-        return view('battle', [
+        return view('quiz', [
             'wid' => $random_word->wid,
             'word' => $random_word->word,
             'clues' => $shuffled_random_clues,
         ]);
     }
 
-    public function guess($wid, $cid) {
+    public function answer($wid, $cid) {
         // Load word
         $words = DB::select('SELECT * FROM words WHERE wid = ' . $wid);
         if (!count($words)) {

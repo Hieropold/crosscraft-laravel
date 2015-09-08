@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/battle', 'BattleController@battle');
-
-Route::get('/battle/guess/{wid}/{cid}', 'BattleController@guess');
+Route::get('/quiz', 'QuizController@quiz');
+Route::get('/quiz/answer/{wid}/{cid}', 'QuizController@answer');

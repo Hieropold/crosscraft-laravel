@@ -9,7 +9,7 @@
 
     <ul>
         <?php foreach ($clues as $cid => $clue): ?>
-            <li><a href="<?php print url('battle/guess/' . $wid . '/' . $cid); ?>"><?php print $clue; ?></a></li>
+            <li><a href="<?php print url('quiz/answer/' . $wid . '/' . $cid); ?>"><?php print $clue; ?></a></li>
         <?php endforeach; ?>
     </ul>
 @endsection

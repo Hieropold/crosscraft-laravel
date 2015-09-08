@@ -35,7 +35,7 @@
     <div class="container">
         <div class="content">
             <div class="title">Crosscraft</div>
-            <a href="<?php print url('battle'); ?>" class="btn btn-lg btn-primary">Играть</a>
+            <a href="<?php print url('quiz'); ?>" class="btn btn-lg btn-primary">Играть</a>
         </div>
     </div>
 @endsection
