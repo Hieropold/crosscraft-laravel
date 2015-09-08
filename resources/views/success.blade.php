@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Победа')
+@section('title', 'Верно!')
 @section('content')
-    <h1 style="color: green;">Победа!</h1>
+    <h1>
+    <div class="alert alert-success" role="alert">
+        <strong>Абсолютно верно!</strong> Попробуйте еще.
+    </div>
+    </h1>
 @endsection

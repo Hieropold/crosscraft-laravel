@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Поражение')
+@section('title', 'Ошибка...')
 @section('content')
-    <h1 style="color: red;">Поражение!</h1>
+    <h1>
+    <div class="alert alert-danger" role="alert">
+        <strong>Вы ошиблись...</strong> Попробуйте следующее слово.
+    </div>
+    </h1>
 @endsection
