@@ -35,5 +35,7 @@
     <div class="content">
         <div class="title">Crosscraft</div>
         <a href="<?php print url('quiz'); ?>" class="btn btn-lg btn-primary">Играть</a>
+
+        {!! Recaptcha::render() !!}
     </div>
 @endsection

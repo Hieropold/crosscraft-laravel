@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@welcome');
 
 Route::get('/quiz', 'QuizController@quiz');
 Route::get('/quiz/answer/{wid}/{cid}', 'QuizController@answer');

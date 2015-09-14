@@ -138,6 +138,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Vendor Service Providers
+         */
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+
+        /*
          * Application Service Providers...
          */
         Crosscraft\Providers\AppServiceProvider::class,
@@ -194,6 +199,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
