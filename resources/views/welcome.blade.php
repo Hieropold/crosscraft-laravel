@@ -33,9 +33,24 @@
 
 @section('content')
     <div class="content">
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="title">Crosscraft</div>
         <a href="<?php print url('quiz'); ?>" class="btn btn-lg btn-primary">Играть</a>
 
-        {!! Recaptcha::render() !!}
+        {!! Form::open(array('url' => 'quiz/init')) !!}
+            {!! Form::token() !!}
+            {!! Recaptcha::render() !!}
+            {!! Form::submit('Играть') !!}
+        {!! Form::close() !!}
     </div>
 @endsection

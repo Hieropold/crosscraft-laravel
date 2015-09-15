@@ -14,4 +14,5 @@
 Route::get('/', 'WelcomeController@welcome');
 
 Route::get('/quiz', 'QuizController@quiz');
+Route::post('/quiz/init', 'QuizController@init');
 Route::get('/quiz/answer/{wid}/{cid}', 'QuizController@answer');

@@ -1,9 +1,16 @@
 <?php
 namespace Crosscraft\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller {
+    public function init(Request $request) {
+        $this->validate($request, [
+            'g-recaptcha-response' => 'required|recaptcha',
+        ]);
+    }
+
     public function quiz() {
         // Select random word
         $random_offset = (int) DB::select('SELECT FLOOR(RAND() * COUNT(*)) AS offset FROM words')[0]->offset;
