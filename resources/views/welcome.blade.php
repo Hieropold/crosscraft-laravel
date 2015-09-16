@@ -45,12 +45,15 @@
         @endif
 
         <div class="title">Crosscraft</div>
-        <a href="<?php print url('quiz'); ?>" class="btn btn-lg btn-primary">Играть</a>
 
-        {!! Form::open(array('url' => 'quiz/init')) !!}
+        <?php if ($isHuman): ?>
+            <a href="<?php print url('quiz'); ?>" class="btn btn-lg btn-primary">Играть</a>
+        <?php else: ?>
+            {!! Form::open(array('url' => 'quiz/init')) !!}
             {!! Form::token() !!}
             {!! Recaptcha::render() !!}
-            {!! Form::submit('Играть') !!}
-        {!! Form::close() !!}
+            {!! Form::submit('Играть', ['class' => 'btn btn-lg btn-primary']) !!}
+            {!! Form::close() !!}
+        <?php endif; ?>
     </div>
 @endsection

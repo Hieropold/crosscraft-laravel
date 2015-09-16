@@ -3,15 +3,26 @@ namespace Crosscraft\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class QuizController extends Controller {
     public function init(Request $request) {
         $this->validate($request, [
             'g-recaptcha-response' => 'required|recaptcha',
         ]);
+
+        // Init session
+        session()->regenerate();
+        session(['isHuman' => TRUE]);
+
+        return redirect()->action('QuizController@quiz');
     }
 
     public function quiz() {
+        if (!Session::get('isHuman', FALSE)) {
+            return redirect()->action('WelcomeController@welcome');
+        }
+
         // Select random word
         $random_offset = (int) DB::select('SELECT FLOOR(RAND() * COUNT(*)) AS offset FROM words')[0]->offset;
         $random_word = DB::select('SELECT * FROM words LIMIT ' . $random_offset . ', 1')[0];
@@ -47,6 +58,10 @@ class QuizController extends Controller {
     }
 
     public function answer($wid, $cid) {
+        if (!Session::get('isHuman', FALSE)) {
+            return redirect()->action('WelcomeController@welcome');
+        }
+
         // Load word
         $words = DB::select('SELECT * FROM words WHERE wid = ' . $wid);
         if (!count($words)) {
